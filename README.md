@@ -74,6 +74,7 @@ Parameters: id, limit, offset, word
 - GET /translate: Translates text using Google Translate.
 - GET /dictionary/ : Retrieves All dictionary information.
 - GET /dictionary/:word : Retrieves specific words in dictionary
+- PUT /dictionary/add-example : Adds an example for a specific word. Requires id and example in the request body.
 
 ## Contributing
 Contributions are welcome! To contribute:
