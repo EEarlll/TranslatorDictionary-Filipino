@@ -1,0 +1,36 @@
+<main>
+  <mat-dialog-content class="mat-typography">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-subtitle>{{ item.type }}</mat-card-subtitle>
+        <mat-card-title>{{ item.word }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item.definition }}</p>
+      </mat-card-content>
+    </mat-card>
+    <h4>Add Example</h4>
+    <form [formGroup]="applyForm">
+      <input type="text" formControlName="id" style="display: none" />
+      <mat-form-field class="example-full-width">
+        <mat-label>Created By:</mat-label>
+        <input matInput formControlName="created_by"/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput formControlName="example"></textarea>
+      </mat-form-field>
+    </form>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Discard</button>
+      <button
+        mat-button
+        [mat-dialog-close]="true"
+        cdkFocusInitial
+        (click)="submitApplication()"
+      >
+        Add
+      </button>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</main>

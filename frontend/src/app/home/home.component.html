@@ -1,0 +1,54 @@
+<main>
+  <div class="icon-horiz" style="cursor: pointer" (click)="swap()">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="swap_horiz"
+    ></mat-icon>
+  </div>
+  <div class="grid-container">
+    <div class="grid-item">
+      <form
+        action=""
+        class="form1"
+        [formGroup]="applyForm"
+        (submit)="submitApplication()"
+      >
+        <input type="text" style="display: none" formControlName="src" />
+        <input type="text" style="display: none" formControlName="dst" />
+        <mat-tab-group
+          (selectedTabChange)="tabChange($event)"
+          [selectedIndex]="selectedTabIndex"
+        >
+          <mat-tab label="Tagalog"> </mat-tab>
+          <mat-tab label="English"> </mat-tab>
+        </mat-tab-group>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="10" formControlName="texts"></textarea>
+        </mat-form-field>
+        <div class="rightbottom-part">
+          <button mat-flat-button type="submit" color="primary">
+            Translate
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="grid-item">
+      <form action="">
+        <mat-tab-group>
+          <mat-tab [label]="ConvLabel"> </mat-tab>
+        </mat-tab-group>
+        <mat-form-field>
+          <textarea matInput rows="10" [value]="translated" readonly></textarea>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="dictionary">
+    <div class="">
+      <ng-container *ngFor="let item of dict">
+        <app-dictionary-item [dict]="item"></app-dictionary-item>
+      </ng-container>
+    </div>
+  </div>
+</main>

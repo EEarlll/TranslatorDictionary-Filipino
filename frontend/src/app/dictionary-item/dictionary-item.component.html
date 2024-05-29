@@ -1,0 +1,32 @@
+<div class="">
+  <mat-divider></mat-divider>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-subtitle>{{ dict.type }}</mat-card-subtitle>
+      <mat-card-title>{{ dict.word }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ dict.definition }}</p>
+      <ul>
+        <li>
+          <p>
+            {{ dict.example }}
+            @if(dict.created_by){
+            <small
+              >[
+              <a (click)="openDialog()">editted by: {{ dict.created_by }}</a>
+              ]</small
+            >
+            } @else{
+            <small
+              >[
+              <a (click)="openDialog()">edit</a>
+              ]</small
+            >
+            }
+          </p>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

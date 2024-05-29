@@ -1,0 +1,34 @@
+<main>
+  <div class="selectForm">
+    <h1 #target>Dictionary</h1>
+    <mat-form-field appearance="outline" >
+      <mat-label>Language Type</mat-label>
+      <mat-select
+        [(value)]="selectedType"
+        (selectionChange)="selectType($event)"
+      >
+        @for (option of types; track option) {
+        <mat-option [value]="option.value">{{ option.value }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <ng-container *ngFor="let item of dict">
+    @if (item.type == selectedType) {
+    <app-dictionary-item [dict]="item"></app-dictionary-item>
+    }@else {
+    <app-dictionary-item [dict]="item"></app-dictionary-item>
+    }
+  </ng-container>
+
+  <ng-container>
+    <mat-paginator
+      [length]="123199"
+      [pageSizeOptions]="[10, 50, 100, 10000]"
+      aria-label="Select page"
+      (page)="onPaginateChange($event, target)"
+    >
+    </mat-paginator>
+  </ng-container>
+</main>

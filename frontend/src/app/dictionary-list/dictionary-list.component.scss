@@ -1,0 +1,16 @@
+mat-card {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: inherit !important;
+}
+
+mat-paginator {
+  background-color: inherit;
+}
+
+.selectForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

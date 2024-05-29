@@ -1,0 +1,25 @@
+.example-full-width {
+  width: 50%;
+}
+
+button {
+  background-color: black !important;
+  color: white !important;
+  width: 90px !important;
+  height: 30px !important;
+}
+
+.formfield {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  main{
+    min-width: 600px;
+  }
+}
